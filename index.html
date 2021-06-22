@@ -15,23 +15,29 @@
                     Auto līzings bez ķīlas no 9% gadā
                 </h3>
             </div>
-            <div class="banner-price">
+            <div class="banner-price range-wrapp">
                 <label for="sum">
                     Summa:
                 </label>
-                <input id="sum" type="range" min="750" max="7500" class="sum-range">
-                <div class="sum-result">
-                    <label for="result">
-                        Summa
+                <input id="sum" type="range" min="750" max="7500" class="sum-range range">
+                <div class="sum-result results-wrapp">
+                    <label for="fiat-result">
+                        Summa:
                     </label>
-                    <input id="result" type="number"/>
+                    <input id="fiat-result" type="number" class="result"/>
                 </div>
             </div>
-            <div class="banner-term">
+            <div class="banner-term range-wrapp">
                 <label for="term">
                     Termiņš:
                 </label>
-                <input id="term" type="range" min="3" max="72" class="term-range">
+                <input id="term" type="range" min="3" max="72" class="term-range range">
+                <div class="term-result results-wrapp">
+                    <label for="month-result">
+                        Termiņš:
+                    </label>
+                    <input id="month-result" type="number" class="result"/>
+                </div>
             </div>
         </div>
     </div>

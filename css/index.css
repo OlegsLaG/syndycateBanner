@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 body {
-  font-family: Arial, sans-serif; }
+  font-family: OpenSans, sans-serif;
+  background-color: rgba(0, 0, 0, 0.4); }
   body span {
     font-size: 12px; }
   body .banner-wrapp .banner {
-    width: 300px;
-    height: 600px;
-    padding: 5px 15px;
+    display: block;
+    margin: 0 auto;
+    width: 240px;
+    height: 590px;
+    padding: 5px 30px;
     background-color: #fff;
     -webkit-box-shadow: 4px 4px 28px -1px rgba(0, 0, 0, 0.31);
     box-shadow: 4px 4px 28px -1px rgba(0, 0, 0, 0.31); }
@@ -13,5 +17,31 @@ body {
       font-size: 25px;
       color: #571c7f;
       text-align: center; }
-    body .banner-wrapp .banner .banner-price .sum {
-      color: #571c7f; }
+    body .banner-wrapp .banner .range-wrapp {
+      margin-bottom: 10px; }
+      body .banner-wrapp .banner .range-wrapp label {
+        color: #571c7f;
+        display: block;
+        font-size: 12px;
+        margin-bottom: 10px; }
+      body .banner-wrapp .banner .range-wrapp .range {
+        display: block;
+        margin: 0 auto 10px; }
+      body .banner-wrapp .banner .range-wrapp .results-wrapp label {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 15px; }
+      body .banner-wrapp .banner .range-wrapp .results-wrapp .result {
+        width: 90px;
+        height: 30px;
+        background-color: #571c7f;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 20px; }
+        body .banner-wrapp .banner .range-wrapp .results-wrapp .result::-webkit-outer-spin-button, body .banner-wrapp .banner .range-wrapp .results-wrapp .result::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
+        body .banner-wrapp .banner .range-wrapp .results-wrapp .result:hover, body .banner-wrapp .banner .range-wrapp .results-wrapp .result:active, body .banner-wrapp .banner .range-wrapp .results-wrapp .result:focus {
+          border: none;
+          outline: none; }
