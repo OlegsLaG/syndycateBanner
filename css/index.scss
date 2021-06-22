@@ -1,6 +1,6 @@
 @import "mixins";
 body {
-  font-family: OpenSans, serif;
+  font-family: OpenSans, sans-serif;
   span {
     font-size: 12px;
   }
@@ -19,8 +19,9 @@ body {
           text-align: center;
         }
       }
-      .banner-price {
-        .sum {
+      .banner-price,
+      .banner-term {
+        label {
           color: $main;
         }
       }
