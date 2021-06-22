@@ -1,0 +1,29 @@
+@import "mixins";
+body {
+  font-family: OpenSans, serif;
+  span {
+    font-size: 12px;
+  }
+  .banner-wrapp {
+    .banner {
+      width: 300px;
+      height: 600px;
+      padding: 5px 15px;
+      background-color: #fff;
+      -webkit-box-shadow: 4px 4px 28px -1px rgba(0,0,0,0.31);
+      box-shadow: 4px 4px 28px -1px rgba(0,0,0,0.31);
+      .banner-head {
+        .banner-name {
+          font-size: 25px;
+          color:$main;
+          text-align: center;
+        }
+      }
+      .banner-price {
+        .sum {
+          color: $main;
+        }
+      }
+    }
+  }
+}
