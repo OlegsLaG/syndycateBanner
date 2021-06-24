@@ -4,43 +4,74 @@
     <title>syndycateBanner</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/main.js" type="application/javascript"></script>
 </head>
 
-<body>
+<body onload="getInterests(); addListeners()">
     <div class="banner-wrapp">
-        <div class="banner">
+        <div id="banner-body" class="banner">
             <div class="banner-head">
                 <img src="images/logo.svg" alt="logo">
                 <h3 class="banner-name">
                     Auto līzings bez ķīlas no 9% gadā
                 </h3>
             </div>
-            <div class="banner-price range-wrapp">
-                <label for="sum">
-                    Summa:
-                </label>
-                <input id="sum" type="range" min="750" max="7500" class="sum-range range">
-                <div class="sum-result results-wrapp">
-                    <label for="fiat-result">
+            <div class="banner-content">
+                <div class="banner-price wrapp">
+                    <label for="sum">
                         Summa:
                     </label>
-                    <input id="fiat-result" type="number" class="result"/>
+                    <div class="range-wrapp">
+                        <span class="sum-range-min">750 &euro;</span>
+
+                        <input id="sum" type="range" min="750" max="7500" class="sum-range range" onchange="showSumVal(this.value); getInterests(this.value)" oninput="showSumVal(this.value); getInterests(this.value);handleInputChange(this);">
+
+                        <span class="sum-range-max">7500 &euro;</span>
+                    </div>
+
+                    <div class="sum-result results-wrapp">
+                        <label for="fiat-result">
+                            Summa:
+                        </label>
+
+                        <input id="fiat-result" type="number" class="result" value="3375" onchange="showSumRange(this.value);getInterests(this.value)"/>
+                    </div>
                 </div>
-            </div>
-            <div class="banner-term range-wrapp">
-                <label for="term">
-                    Termiņš:
-                </label>
-                <input id="term" type="range" min="3" max="72" class="term-range range">
-                <div class="term-result results-wrapp">
-                    <label for="month-result">
+                <div class="banner-term wrapp">
+                    <label for="term">
                         Termiņš:
                     </label>
-                    <input id="month-result" type="number" class="result"/>
+                    <div class="range-wrapp">
+                        <span class="sum-range-min">3</span>
+
+                        <input id="term" type="range" min="3" max="72" class="term-range range" onchange="showTermVal(this.value);getInterests(this.value)" oninput="showTermVal(this.value);getInterests(this.value);handleInputChange(this);">
+
+                        <span class="sum-range-max">72</span>
+                    </div>
+                    <div class="term-result results-wrapp">
+                        <label for="month-result">
+                            Termiņš:
+                        </label>
+                        <input id="month-result" type="number" class="result" value="36" onchange="showTermRange(this.value);getInterests(this.value)" />
+                    </div>
+                </div>
+            </div>
+            <div class="banner-footer">
+                <div id="loan" class="total-loan">
+                    Kredīta summa
+                </div>
+                <div id="monthly" class="monthly-pay">
+                    Ikmēneša maksājums
+                    <span id="mothly-amount" class="amount"></span>
+                </div>
+                <button class="submit">
+                    pieteikties
+                </button>
+                <div class="terms">
+                    Kalkulatorā aprēķinātie dati ir informatīvi un sniedz priekšstatu par ikmēneša maksājumu. Aizņemies atbildīgi, izvertējot iespējas atmaksāt kredītu.
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script src="js/main.js"></script>
 </html>
