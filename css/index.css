@@ -5,7 +5,6 @@ body {
   body span {
     font-size: 12px; }
   body .banner-wrapp .banner {
-    position: absolute;
     display: block;
     margin: 0 auto;
     width: 260px;

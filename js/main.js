@@ -1,21 +1,3 @@
-function divMove(e) {
-    let div = document.getElementById('banner-body');
-    div.style.position = 'absolute';
-    div.style.top = e.clientY + 'px';
-    div.style.left = e.clientX + 'px';
-}
-function mouseUp() {
-    window.removeEventListener('mousemove', divMove, true);
-}
-
-function mouseDown(e){
-    window.addEventListener('mousemove', divMove, true);
-}
-function addListeners(){
-    document.getElementById('banner-body').addEventListener('mousedown', mouseDown, false);
-    window.addEventListener('mouseup', mouseUp, false);
-}
-
 function handleInputChange(e) {
     const min = e.min;
     const max = e.max;
