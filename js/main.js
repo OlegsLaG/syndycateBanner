@@ -56,4 +56,26 @@ function getInterests(sum, months) {
 
 }
 
+let clicks = 0;
 
+function saveData(clicked_id) {
+
+    clicks++;
+
+    let data = new FormData();
+    data.append(clicked_id, clicks.toString());
+
+    fetch("http://localhost/testBanner/getInfo.php", {
+        method:"post",
+        body: data
+    }).then(function (response){
+        return response.text()
+    }).then(function (text) {
+        console.log(text);
+    }).catch(function (error) {
+        console.log(error)
+    });
+    clicks = 0;
+    return false;
+
+}
