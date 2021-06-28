@@ -24,7 +24,7 @@
                     <div class="range-wrapp">
                         <span class="sum-range-min">750 &euro;</span>
 
-                        <input id="sum" type="range" min="750" max="7500" class="sum-range range" onchange="showSumVal(this.value); getInterests(this.value)" oninput="showSumVal(this.value); getInterests(this.value);handleInputChange(this);">
+                        <input id="sum" type="range" min="750" max="7500" class="sum-range range" onclick="saveData(this.id)" onchange="showSumVal(this.value); getInterests(this.value)" oninput="showSumVal(this.value); getInterests(this.value);handleInputChange(this);">
 
                         <span class="sum-range-max">7500 &euro;</span>
                     </div>
@@ -34,7 +34,7 @@
                             Summa:
                         </label>
 
-                        <input id="fiat-result" type="number" class="result" value="3375" onchange="showSumRange(this.value);getInterests(this.value)"/>
+                        <input id="fiat-result" type="number" class="result" value="3375" onclick="saveData(this.id)" onchange="showSumRange(this.value);getInterests(this.value)"/>
                     </div>
                 </div>
                 <div class="banner-term wrapp">
@@ -44,7 +44,7 @@
                     <div class="range-wrapp">
                         <span class="sum-range-min">3</span>
 
-                        <input id="term" type="range" min="3" max="72" class="term-range range" onchange="showTermVal(this.value);getInterests(this.value)" oninput="showTermVal(this.value);getInterests(this.value);handleInputChange(this);">
+                        <input id="term" type="range" min="3" max="72" class="term-range range" onclick="saveData(this.id)" onchange="showTermVal(this.value);getInterests(this.value)" oninput="showTermVal(this.value);getInterests(this.value);handleInputChange(this);">
 
                         <span class="sum-range-max">72</span>
                     </div>
@@ -52,7 +52,7 @@
                         <label for="month-result">
                             Termiņš:
                         </label>
-                        <input id="month-result" type="number" class="result" value="36" onchange="showTermRange(this.value);getInterests(this.value)" />
+                        <input id="month-result" type="number" class="result" value="36" onclick="saveData(this.id)" onchange="showTermRange(this.value);getInterests(this.value)" />
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     Ikmēneša maksājums
                     <span id="mothly-amount" class="amount"></span>
                 </div>
-                <button class="submit">
+                <button class="submit" onclick="saveData(this.id)">
                     <a href="#">
                         pieteikties
                     </a>
