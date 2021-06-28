@@ -105,7 +105,6 @@ body {
     body .banner-wrapp .banner .banner-footer .submit {
       border-radius: 20px;
       background-color: #571c7f;
-      color: #fff;
       text-transform: uppercase;
       width: 255px;
       display: block;
@@ -114,6 +113,12 @@ body {
       font-size: 15px;
       font-weight: 600;
       padding: 10px 0; }
+      body .banner-wrapp .banner .banner-footer .submit a {
+        color: #fff;
+        text-decoration: none; }
+        body .banner-wrapp .banner .banner-footer .submit a:focus, body .banner-wrapp .banner .banner-footer .submit a:active, body .banner-wrapp .banner .banner-footer .submit a:hover {
+          text-decoration: none;
+          color: #fff; }
     body .banner-wrapp .banner .banner-footer .terms {
       color: #737373;
       font-size: 10px;

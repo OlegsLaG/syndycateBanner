@@ -131,7 +131,6 @@ body {
         .submit {
           border-radius: 20px;
           background-color: $main;
-          color: #fff;
           text-transform: uppercase;
           width: 255px;
           display: block;
@@ -140,6 +139,16 @@ body {
           font-size: 15px;
           font-weight: 600;
           padding: 10px 0;
+          a {
+            color: #fff;
+            text-decoration: none;
+            &:focus,
+            &:active,
+            &:hover {
+              text-decoration: none;
+              color: #fff;
+            }
+          }
         }
         .terms {
           color: $secondary;
