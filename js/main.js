@@ -56,26 +56,71 @@ function getInterests(sum, months) {
 
 }
 
-let clicks = 0;
+function saveData(clickData) {
 
-function saveData(clicked_id) {
-
-    clicks++;
-
-    let data = new FormData();
-    data.append(clicked_id, clicks.toString());
-
-    fetch("http://localhost/testBanner/getInfo.php", {
-        method:"post",
+    var data = new URLSearchParams();
+    data.append("clicks-made",clickData);
+    fetch("url", {
+        method: 'post',
         body: data
-    }).then(function (response){
-        return response.text()
-    }).then(function (text) {
-        console.log(text);
-    }).catch(function (error) {
-        console.log(error)
-    });
-    clicks = 0;
+    })
+        .then(function (response) {
+            if(response.ok) {
+                console.log('No errors found. Sending data');
+            }
+        })
+        .then(function (text) {
+            console.log(text);
+        })
+        .catch(function (error) {
+            console.log(error)
+        });
     return false;
 
 }
+
+var sum = document.getElementById('sum');
+var fiatResult = document.getElementById('fiat-result');
+var term = document.getElementById('term');
+var monthResult = document.getElementById('month-result');
+
+var sumClicks =0;
+var fiatClicks =0;
+var termClicks =0;
+var monthClicks = 0;
+
+var data = [{
+    sumSlider: sumClicks,
+    sumResult: fiatClicks,
+    monthSlider: termClicks,
+    monthResult: monthClicks
+}];
+
+sum.addEventListener('click', ()=> {
+    sumClicks +=1;
+    for(var i=0; i < data.length; i++){
+        data[i].sumSlider = sumClicks;
+    }
+    saveData(data);
+})
+fiatResult.addEventListener('click', ()=> {
+    fiatClicks +=1;
+    for(var i=0; i < data.length; i++){
+        data[i].sumResult = fiatClicks;
+    }
+    saveData(data);
+})
+term.addEventListener('click', ()=> {
+    termClicks +=1;
+    for(var i=0; i < data.length; i++){
+        data[i].monthSlider = termClicks;
+    }
+    saveData(data);
+})
+monthResult.addEventListener('click', ()=> {
+    monthClicks +=1;
+    for(var i=0; i < data.length; i++){
+        data[i].monthResult = monthClicks;
+    }
+    saveData(data);
+})
